@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const cuteTexts = [
   "Are you a magician? Because whenever I look at you, everyone else disappears!",
@@ -32,8 +31,6 @@ const noButtonTexts = [
     "Is that your final answer?",
     "You're breaking my heart ;(",
 ];
-
-const valentineImage = PlaceHolderImages.find(img => img.id === 'valentine-yes');
 
 export default function Home() {
   const [yesClicked, setYesClicked] = useState(false);
@@ -90,18 +87,16 @@ export default function Home() {
         <Card className="max-w-md w-full text-center p-6 md:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-500 bg-card/90 backdrop-blur-sm border-primary">
           <CardContent className="p-0">
             <h1 className="text-4xl md:text-5xl font-headline text-accent-foreground mb-4">I knew it!</h1>
-            {valentineImage && (
-              <div className="my-6 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={valentineImage.imageUrl}
-                  alt={valentineImage.description}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                  data-ai-hint={valentineImage.imageHint}
-                />
-              </div>
-            )}
+            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="https://media.giphy.com/media/26FLdmIp6wJrSA6rA/giphy.gif"
+                alt="Cute cat heart gif"
+                width={480}
+                height={480}
+                unoptimized
+                className="w-full h-auto object-cover"
+              />
+            </div>
             <p className="text-lg md:text-xl font-body text-foreground/80 italic">
               "{cuteText}"
             </p>
