@@ -1,10 +1,12 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export', // Enable static exports for GitHub Pages
+  distDir: 'out', // Specify the output directory
+  trailingSlash: true, // Add trailing slashes to URLs for GitHub Pages compatibility
+  basePath: '/valentine', // Set the base path for GitHub Pages
+  assetPrefix: '/valentine',
+  // Enable static output
   images: {
     remotePatterns: [
       {
