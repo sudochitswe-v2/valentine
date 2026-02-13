@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
   distDir: 'out', // Specify the output directory
   trailingSlash: true, // Add trailing slashes to URLs for GitHub Pages compatibility
   basePath: '/valentine', // Set the base path for GitHub Pages
-  assetPrefix: '/valentine',
+  assetPrefix: '',
+  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Enable static output
   images: {
     remotePatterns: [
       {
