@@ -89,8 +89,8 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-headline text-accent-foreground mb-4">I knew it!</h1>
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://media.giphy.com/media/UMon0fuS3d2vi/giphy.gif"
-                alt="Cute cats cuddling gif"
+                src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3p2aWJia3E1cHRxZzVhaXQxMGE2b3luYno2b3luamJrazIyOGxxYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ytu2GUYbvhz7zShGwS/giphy.gif"
+                alt="Cute cat and dog hugging gif"
                 width={480}
                 height={480}
                 unoptimized
