@@ -89,7 +89,7 @@ export default function Home() {
       {yesClicked ? (
         <Card className="max-w-md w-full text-center p-6 md:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-500 bg-card/90 backdrop-blur-sm border-primary">
           <CardContent className="p-0">
-            <h1 className="text-4xl md:text-5xl font-headline text-accent-foreground mb-4">You are my Valentine!</h1>
+            <h1 className="text-4xl md:text-5xl font-headline text-accent-foreground mb-4">I knew it!</h1>
             {valentineImage && (
               <div className="my-6 rounded-lg overflow-hidden shadow-lg">
                 <Image
