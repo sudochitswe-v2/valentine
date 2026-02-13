@@ -5,8 +5,6 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "prebuild:export": "node scripts/build-export.js",
-    "build:export": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
