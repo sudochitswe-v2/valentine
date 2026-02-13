@@ -1,0 +1,70 @@
+const fs = require('fs');
+const path = require('path');
+
+// Copy the export configuration to next.config.ts before building
+const exportConfigPath = path.join(__dirname, '../next.config.export.ts');
+const mainConfigPath = path.join(__dirname, '../next.config.ts');
+
+// Read the export configuration
+const exportConfig = fs.readFileSync(exportConfigPath, 'utf8');
+
+// Write it to the main config file temporarily
+fs.writeFileSync(mainConfigPath, exportConfig);
+
+console.log('Switched to export configuration for build.');
+
+// After build completes, restore the original configuration
+process.on('exit', () => {
+  // Restore development configuration
+  const devConfig = `import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.giphy.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media0.giphy.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+`;
+
+  fs.writeFileSync(mainConfigPath, devConfig);
+  console.log('Restored development configuration.');
+});
